@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!--
+    Document   : crbitadmin_config.xml
+    Created on : October 13, 2004, 11:24 AM
+    Author     : jaipal
+    Description:
+        Used in crbtadmin to log the statements.
+-->
+
+<!--  Here is an XML configuration file for a Logger implementing a FileAppender using a PatternLayout: -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="appender" class="org.apache.log4j.FileAppender">
+        <!--<param name="File" value="/usr/local/tomcat/logs/webadmin.out"/>-->
+        <param name="File" value="/home/tomcat/apache-tomcat-7.0.30/logs/webadmin.out"/>
+        <param name="Append" value="true"/> 
+        <param name="MaxFileSize" value="5120KB"/> 
+        <param name="MaxBackupIndex" value="1"/> 
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/> 
+        </layout>         
+<!--        <layout class="org.apache.log4j.PatternLayout">
+          <param name="ConversionPattern" value="%d [%t] %p - %m%n"/>
+        </layout>
+-->        
+    </appender>
+<!--
+    <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.SimpleLayout"/>
+    </appender>
+-->
+    <root>
+        <priority value ="info"/>
+        <appender-ref ref="appender"/>
+   <!-- <appender-ref ref="ConsoleAppender"/>-->
+    </root>
+
+</log4j:configuration>

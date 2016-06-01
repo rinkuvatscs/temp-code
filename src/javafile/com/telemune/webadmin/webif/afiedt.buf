@@ -1,0 +1,2 @@
+select to_char(update_time,'MON-YYYY') update_time, count(*) total_RBT from CRBT_SETTING_CDR where (trunc(update_time) <= (to_date('31-08-2007','DD-MM-YYYY')) and update_time >= to_date('01-08-2007','DD-MM-YYYY')) group by to_char(update_time,'MON-YYYY')
+/

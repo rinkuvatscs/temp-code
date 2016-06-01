@@ -1,0 +1,947 @@
+body{
+	background:url(../images/bgnd_main.jpg) repeat-x;
+	padding-top:10px;
+}
+
+/*Top defines the top of the page with the curve*/
+#top{
+	background-image:url(../images/maintable_top.png);
+	height:73px;
+	width:792px;
+	margin:auto;
+}
+
+/*this defines the logo that goes inside the top of the page*/
+#top .headerlogo{
+	margin-left:20px;
+	margin-top:10px;
+}
+
+/*this defines the tools/links that are used in the header*/
+#headertools{
+	font-family:verdana,tahoma,arial ;
+	font-size:0.7em;
+	color:#787878;
+	float:right;
+	margin-right:8px;
+	margin-top:-10px;
+
+}
+
+#headertools ul{
+	list-style:none;
+	margin-bottom:10px;
+}
+
+#headertools ul li{
+	float:left;
+	
+}
+
+#headertools ul li a{
+margin-right:10px;
+	margin-left:10px;
+	color:#787878;
+	text-decoration:none
+}
+
+#headertools ul li a:hover{
+	color:#0086dd;
+	text-decoration:underline;
+}
+
+/*Formatting for main navigation*/
+
+/*Div which contains the main navigation*/
+#navholder{
+		background:url(../images/bgnd_main.png) repeat-y;
+		width:792px;
+		margin:auto;
+}
+#navigation{
+	clear:both;
+	background:url(../images/bgnd_navi_unlit.gif) repeat-x;
+	height:43px;
+	width:786px;
+	margin:0px auto 0px;
+	
+}
+
+#navigation ul{
+
+	margin:0px 0px 0px -10px;
+	*margin:0px 0px 0px 20px;
+	font-size:0.7em;
+	font-family:arial;
+	color:white;
+}
+
+#navigation ul li{
+padding-top:10px;
+	margin-bottom:-10px;
+	list-style:none;
+	float:left;
+	margin-right:8px;
+	margin-left:8px;
+	
+}
+
+#navigation ul li a{
+	display:block;
+	font-family:arial;
+	color:white;
+	text-decoration:none;
+	text-transform:uppercase;
+	font-weight:bold;
+	height:43px;
+	padding:0px 8px;
+	float:left;
+	
+}
+
+#navigation ul li a:hover{
+	margin-top:-10px;
+	display:block;
+	background:url(../images/bgnd_navi_lit.gif) repeat-x;
+	line-height:34px;
+	padding:0px 8px;
+}
+
+#subnav{
+	clear:both;
+	width:792px;
+	margin:0px auto 0px;
+	*margin:0px auto 0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background:url(../images/bgnd_main.png) repeat-y;
+	
+}
+
+#navigation ul.special{
+	float:right;
+	background:url(../images/bgnd_naviOrange_unlit.gif) repeat-x !important; 
+	height:43px;
+	width:100px;
+	margin:0px;
+
+}
+
+#navigation ul.special li a{
+	margin-left:-5px;
+	
+}
+
+
+#navigation ul.special li a:hover{
+		background:url(../images/bgnd_naviOrange_lit.gif) repeat-x !important; 
+		height:43px;
+		width:90px;
+		margin-left:-5px;
+		padding-left:5px;
+		
+		}
+
+#subnav {
+	height:30px;
+	
+}
+
+p.breadcrumb{
+	padding-left:15px;
+	line-height:24px;
+	margin:0px;
+	font-family:verdana,arial,  tahoma;
+	font-size:0.6em;
+	font-weight:bold;
+	color:#929292;
+}
+
+p.breadcrumb a{
+	color:#929292;
+	text-decoration:none;
+}
+
+p.breadcrumb a:hover{
+	color:#00adef;
+	text-decoration:none;
+}
+
+#subnav ul {
+float:right;
+margin:-25px 15px 0px 0px;
+
+}
+
+
+#subnav ul li{
+font-family:arial, verdana, tahoma;
+font-size:0.7em;
+font-weight:bold;
+color:#727272;
+text-transform:uppercase;
+	float:left;
+	list-style:none;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+#subnav ul li a{
+	font-family:verdana, arial, verdana, tahoma;
+	font-size:0.7em;
+	color:#5e5e5e;
+	text-decoration:none;
+}
+
+#subnav ul li a:hover{
+	color:#4d941b;
+}
+
+#searchbox{
+	margin-left:300px;
+}
+
+/*formattnig for div that contains the main ad image*/
+#mainad{
+	
+	background:url(../images/bgnd_main.png) repeat-y;
+	width:792px;
+	margin:-5px auto 0px;
+}
+
+#mainad img{
+	margin-left:3px;
+}
+
+/*formatting for div containing all site content*/
+#contentholder{
+	background:url(../images/bgnd_main.png) repeat-y;
+	width:792px;
+	margin:auto;
+}
+
+#content{
+	background:url(../images/bgnd_gradient.gif) repeat-x;
+	width:757px;
+	margin:-0px auto 0px;
+	*margin:-0px  auto 0px; 
+	padding:14px;
+	
+}
+
+#content p{
+	font-family:verdana,arial,  tahoma;
+	font-size:0.7em;
+	line-height:17px;
+	color:#3e3e3e;	
+}
+
+#content h3{
+	font-size:0.8em;
+	font-weight:bold;
+	color:#535353;
+	font-family: verdana, tahoma, arial;
+	margin:0px;
+}
+
+#content .blocktext h3{
+	font-family:verdana, tahoma, arial !important;
+	font-size:0.8em !important;
+	font-weight:bold !important;
+	color:#474747 !important;
+}
+
+#content h2{
+	font-size:1.2em;
+	font-weight:normal;
+	color:#091621;
+	font-family:tahoma, verdana, arial;
+}
+
+#content ul{
+		font-family:verdana,arial,  tahoma;
+	font-size:0.7em;
+	line-height:17px;
+	color:#3e3e3e;	
+	list-style:square;
+}
+
+#content p a{
+	color:#0072bc;
+}
+
+#content p a:hover{
+	color:black;
+	text-decoration:none;
+}
+
+p.nomarginp{
+	margin:0px;
+}
+
+#subcontent{
+	background-image:url(../images/bgnd_gradient2.png);
+	height:131px;
+	width:746px;
+	margin-left:5px;
+}
+#subcontent h1{
+	font-size:0.8em;
+	font-family:arial, verdana,tahoma;
+	margin-top:6px;
+	margin-left:6px;
+}
+
+/*Footer formatting*/
+#footer{
+	background-image:url(../images/bgnd_footer.png);	
+	width:792px;
+	height:37px;
+	margin:auto;
+
+}
+
+#footer ul{
+	padding-top:5px;
+	margin:0px 0px 0px -20px;
+	*margin:0px 0px 0px 20px;
+}
+
+#footer ul li {
+	list-style:none;
+	float:left;
+	
+}
+
+#footer ul li a{
+	font-family:verdana,arial,tahoma,  ;
+	margin-right:7px;
+	margin-left:7px;
+	font-size:0.6em;
+	color:#636363;
+	text-decoration:none;
+}
+
+#footer ul li a:hover{
+	
+	color:black;
+}
+
+#footer2{
+	padding-top:10px;
+	width:792px;
+	margin:auto;
+	font-size:0.7em;
+	color:white;
+	font-family:verdana,tahoma, arial,  ;
+	text-align:center;
+	color:#494949;
+}
+
+#footer2 a{
+	color:#4a921a;
+	text-decoration:underline;
+	
+}
+
+#footer2 a:hover{
+	color:black;
+	text-decoration:none;
+}
+
+/*Styles for left navigation*/
+#leftnav{
+	background:url(../images/leftnav_filler.png) repeat-y;
+	width:191px;
+	float:left;
+	margin-left:-14px;
+	margin-right:8px;
+	display:block;
+	padding-bottom:-8px;
+	
+	
+}
+
+
+#leftnav ul {
+	margin:0px;
+	text-indent:8px;
+	font-size:1em;
+	font-family:verdana, tahoma, sans-serif;
+
+}
+#leftnav ul li{
+	padding-top:5px; 
+	padding-bottom:5px;
+	list-style:none;
+	border-bottom:1px #dad7d7 solid ;
+	font-family: verdana, arial, tahoma;
+	font-weight:bold;
+	margin-left:-40px;
+	#margin-left:0px;
+	*margin-left:0px;
+	width:186px;
+}
+
+#leftnav ul li a{
+	font-size:0.7em;
+	color:#7c7c7c;
+	text-decoration:none;
+}
+
+#leftnav ul li a:hover{
+	color:#8dc63f;
+}
+
+#leftnav h3{
+	background-image:url(../images/leftnav_bottom.png);
+	margin:0px 0px 0px 0px;
+	margin-top:-8px;
+	width:191px;
+	height:13px;
+	z-index:0;
+}
+
+
+/*Formatting for table at the top of each page*/
+.pageheaderholder{
+	background:url(../images/bgnd_main.png) repeat-y;
+	width:786px;
+	margin-left:auto;
+}
+
+.pageheadertable{
+	height:29px;
+
+}
+
+.pageheadertable tr td img{
+	margin-left:-20px;
+}
+
+.pageheadertable tr td{
+	font-size:01em;
+	padding-left:20px; 
+	font-family:arial, verdana, tahoma;
+	text-transform:lowercase;
+	color:white;
+}
+
+.phonedisplayTable{
+ font-size:1em;
+ border:1px solid #cdcdcd;
+ float:left;
+}
+
+.phonedisplayTable .separatorRow{
+	background-color:#e3f1d0;
+	border-right:3px solid white;
+	font-size:1px;
+	border-bottom:1px solid #96cb57;
+}
+
+.phonedisplayTable .lefttr{
+	border-left:1px solid #cdcdcd;
+	padding-left:10px;
+}
+
+.phonedisplayTable tr td p{
+	font-family: verdana, tahoma, arial;
+	font-size:0.6em;
+}
+
+.phonedisplayTable h3{
+	font-size:0.8em;
+	font-family:verdana, tahoma, arial;
+	color:#2177e5;
+	margin:0px;
+	
+}
+.minitext1{
+	font-size:0.6em !important;
+	font-family:verdana !important;
+	margin:0px;
+	
+
+}
+
+.phoneimage{
+	float:left;
+	padding:3px;
+}
+
+.headerrow{
+	font-family: tahoma,verdana, tahoma, arial !important;
+	text-align:left;
+	color:white;
+	font-size:0.8em !important;
+	line-height:15px;
+	padding-top:9px;
+	text-transform:none !important;
+}
+
+.price{
+	width:350px;
+	
+	border-top:1px solid #e0e0e0;
+	margin:-10px 0px 0px;
+	font-family:arial;
+	padding-top:5px;
+	font-weight:bold;
+	color:#2177e5;
+	font-size:1.0em;
+	display:block;
+}
+
+.moreinfolink a{
+
+	float:left;
+	font-size:1.0em !important;
+	text-decoration:none;
+	color:#0f54ec;
+}
+
+.moreinfolink a:hover{
+	text-decoration:underline;
+	color:#428b16;
+}
+
+
+/*This defines the box used for the main phone image on the phone detail page*/
+.leftimage{
+	border: 1px solid #bfbfbf;
+	float:left;
+	background-color:white;
+	width:228px;
+	height:374px;
+}
+
+/*This defines the table that holds the details for the phone on the phone detail page*/
+.phonedetailtable{
+	border:1px solid #bfbfbf;
+	float:left;
+	margin-left:10px;
+	padding:5px;
+	#margin-top:-16px;
+	*margin-top:-16px;
+	background-color:white;
+	
+}
+
+.phonedetailtable caption{
+	font-family:verdana, tahoma, arial;
+	font-size:0.8em;
+	color:#5e5e5e;
+	text-align:left;
+	text-transform:uppercase;
+	margin-top:-16px;
+	text-indent:10px;
+	#text-indent:0px;
+	*text-indent:0px;
+	#margin-top:0px;
+	*margin-top:0px;
+	
+}
+
+.phonedetailtable h1{
+	font-size:0.8em !important;
+	font-family:verdana, tahoma, arial !important;
+	color:#5e5e5e !important;
+	margin:0px !important;
+}
+
+.phonedetailtable p{
+	margin:0px !important;
+	font-size:0.7em !important;
+	line-height:15px !important;
+	font-family: verdana, tahoma, arial !important;
+	margin-bottom:5px !important;
+	
+}
+
+.phonedetailtable .leftevenrow{
+	font-family:arial, verdana , tahoma;
+	font-size:0.7em;
+	font-weight:bold;
+	color:#363636;
+	border-right:1px solid #eeeeee;
+	background-color:#dcedc5;
+	text-transform:capitalize;
+	padding:3px;
+
+}
+
+.phonedetailtable .leftoddrow{
+	font-family:arial, verdana , tahoma;
+	font-size:0.7em;
+	font-weight:bold;
+	color:#363636;
+	border-right:1px solid #d9d9d9;
+	background-color:#c3dea3;
+	text-transform:capitalize;
+	padding:3px;
+
+}
+
+.phonedetailtable .rightevenrow{
+	background-color:white;
+	border-left:1px solid #eeeeee;
+	font-family:verdana,arial, verdana, tahoma;
+	font-size:0.7em;
+}
+
+.phonedetailtable .rightoddrow{
+	background-color:#ebebeb;
+	border-left:1px solid #d9d9d9;
+	font-family:verdana,arial,  tahoma;
+	font-size:0.7em;
+}
+
+/*formatting for comparison table*/
+.compareTable{
+	border:1px solid #dcdcdc;
+}
+
+.compareTable	h3{
+	font-size:0.7em !important;
+	font-family:verdana, tahoma, arial !important;
+	color:#5d5d5d !important;
+	margin:0px !important;
+	text-align:center;
+
+}
+
+
+.compareTable .price2{
+
+	font-family:arial !important;
+	font-weight:bold !important;
+	color:#2177e5 !important;
+	margin:0px !important;
+	font-size:0.8em !important;
+	clear:both !important;
+	
+		
+			padding-top:0px !important;
+}
+
+.compareTable .columnHeading2{
+	height:15px; 
+	font-size:0.7em;
+	font-weight:bold;
+	color:#595959;
+	font-family: verdana,arial, tahoma;
+	border-bottom:1px solid #cccccc;
+	
+	}
+	
+	.compareTable .content{
+		font-family: verdana, tahoma, arial;
+		font-size:0.7em;
+		color:#595959;
+		text-align:right;
+		padding:5px;
+	}
+	
+		.compareTable .content2{
+			font-family:verdana, tahoma, arial;
+			font-size:0.7em;
+			text-align:center;
+			color:#636363;
+			
+		}
+		
+/*formatting for table that details calling plans*/
+.plantable{
+	border:1px solid #cccccc;
+	text-align:center;
+	color:#666;
+	font-family:verdana, tahoma, arial;
+	font-size:0.7em;
+	background-color:white;
+	
+}
+
+.plantable caption{
+	text-align:left;
+	width:100%;
+	background-color:#99cc66;
+	font-size:1.2em !important;
+	color:white;
+	text-indent:10px;
+	padding:5px;
+	font-weight:bold;
+	font-family:arial;
+	
+}
+.plantable th{
+	background-color:#5dadf3;
+	color:white;
+	font-weight:normal;
+}
+
+.plantable tr{
+	border-bottom:1px solid #ccc;
+}
+
+.plantable .rowtitle{
+	font-size:1em;
+	font-weight:bold;
+	text-align:right;
+	border-right:1px dotted #c4c4c4;
+	padding:5px;
+	
+}
+
+.plantable .rowsubtitle{
+	font-size:0.9em;
+	text-align:right;
+	font-weight:bold;
+	color:#8a8a8a;
+}
+
+.plantable .specialredcell{
+	background-color:#d5ecb3;
+	border:1px solid #64b328;
+}
+
+.plantable .specialbluecell{
+	background-color:#ade3f9;
+
+	border:1px solid #7ad8fe;
+}
+
+/*formatting for div that holds page notes*/
+.notes {
+	font-family: verdana, tahoma, arial;
+	font-size:0.7em;
+	color:#666;
+}
+
+.notes p{
+	font-size:1.2em !important;
+		color:#666;
+		font-family: verdana, tahoma, arial;
+}
+
+.notes ul li{
+	font-size:1.1em;
+	list-style:circle;
+	padding:1px;
+}
+
+.othersites{
+	border:1px solid #e4e4e4 !important;
+ 	width:150px;
+	font-family:verdana,  arial, tahoma;
+	font-weight:normal;
+	font-size:1em;
+	color:#828282;
+	padding:2px;
+}
+
+.othersites option .listitle{
+	border-bottom:1px solid black !important;
+	width:100% !important;
+	font-weight:bold !important;
+	color:black;
+}
+
+.optionlist{
+ text-transform:none !important;
+ font-weight:bold !important;
+ color:#979797;
+ 
+}
+
+div#linklist{
+	display:block;
+	font-family: verdana, tahoma, arial;
+	font-size:0.8em;
+	color:#5b5b5b;
+	background:url(../images/bgnd_listmenu.png) repeat-y;
+	border:1px solid red !important;
+	padding:5px;
+	width:300px;
+	position:absolute;
+}
+
+#linklist ul {
+	margin:0px;
+	font-family:verdana, tahoma, arial;
+	font-size:0.8em;
+	color:#5b5b5b;
+	
+}
+
+#linklist ul li{
+	list-style:none;
+}
+
+#linklist ul li a{
+	list-style:none;
+	font-size:1.1em;
+	text-transform:none;
+}
+
+.gct{
+	font-family: verdana, tahoma, arial;
+	font-size:0.6em;
+	color:#5c5c5c;
+	font-weight:normal;
+}
+
+/*Formatting for FAQ box placed on the contact us page*/
+.faqbox{
+	margin-left:10px;
+	float:left;
+	width:200px;
+	padding:10px;
+	background:url(../images/bgnd_faqbox.gif) repeat-x;
+	border: 1px solid #e2e2e2;
+	font-family:arial, verdana, tahoma;
+}
+
+.faqbox ul{
+	margin:0px 0px 0px 15px !important;
+	
+}
+
+.faqbox  ul li{
+	list-style:square;
+	padding:3px;
+}
+
+.faqbox ul li a{
+	font-size:1em;
+	font-weight:normal;
+	color:#808080;
+	text-decoration:underline;
+}
+
+.faqbox ul li a:hover{
+	color:#4399ff;	
+	text-decoration:none;
+}
+
+
+/*--------------begin formatting for major FAQ table ---------------------*/
+
+/*Formatting for table which lists FAQ on pop up page*/
+.faqtable {
+	background-color:white !important;
+	width:700px;
+	border-left:1px solid white;
+	border-right:1px solid white;
+	
+}
+
+.faqtable thead th{
+	font-family:arial, verdana, tahoma; 
+	font-size:0.8em;
+	background-color:#333333;
+	color:white;
+	text-align:left;
+}
+.faqtable caption{
+	background:url(../images/bgnd_caption.jpg) repeat-x;
+	font-size:0.9em !important;
+	color:white;
+	font-family:arial, verdana, tahoma;
+	font-weight:bold;
+	height:16px;
+border-left:1px solid white;
+	border-right:1px solid white;
+
+}
+
+.faqtable p{
+	font-size:0.7em;
+	font-family:verdana, tahoma, arial;
+	color:black;
+	
+}
+
+.faqtable tr.even{
+	border-top: 1px solid #8dc63f;
+	border-bottom: 1px solid #8dc63f !important;
+	background-color:#ebebeb !important;	
+	
+}
+
+.faqtable caption{
+	height:23px !important;
+}
+
+td.odd 
+{
+	/*background-color:#b1b1b1;*/
+	background-color:#c0df95 !important;
+	font-family:arial, verdana ,tahoma;
+	font-size:0.7em;
+	font-weight:bold;
+	color:#272727;
+	border-right:2px solid #eeeeee;
+}
+
+td.even{
+	/*background-color:#a5a5a5;	*/
+	background-color:#91c357 !important;
+	font-family:arial, verdana ,tahoma;
+	font-size:0.7em;
+	font-weight:bold;
+	color:#272727;
+	border-right:2px solid #d9d9d9;
+	
+	
+}
+.faqtable ul li{
+	font-family: tahoma,verdana, arial;
+	font-size:0.8em;
+	color: black;
+}
+/*---------------- End foratting for major FAQ table ------------------------*/
+
+/*---- Begin formatting for table holding prices -------*/
+.table1 tbody{
+	text-align:center;
+	font-family:arial, verdana, tahoma, sans-serif;
+	font-size:0.8em;
+	color:#515252;
+}
+.table1 tbody td{
+	border-bottom: 1px solid #979797;
+}
+
+.table1 thead th{
+	font-size:1em;
+	font-family: arial, verdana ,tahoma; 
+	font-weight:bold;
+	border-bottom:1px solid #8dc63f;
+	color:#424242;
+}
+/*-------- End formatting for table holding prices --------*/
+
+.purpletitle{
+	font-size:0.9em;
+	font-weight:bold;
+	font-family:arial,verdana, tahoma, ;
+	color:purple;
+}
+
+.purpletext{
+	color:purple;
+	
+}
+
+.numberedlist ul{
+	margin:0px;
+}
+
+.numberedlist li{
+	list-style-type:decimal;
+}
+
+
+.underlinerow{
+	border-bottom:1px solid #b9c4cd;
+}

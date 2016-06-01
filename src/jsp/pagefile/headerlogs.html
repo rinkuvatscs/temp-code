@@ -1,0 +1,463 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<%@ page language = "java" %>
+<head>
+<TITLE>CRBT Admin</TITLE>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link href="../pagefile/frstyles.css" rel="stylesheet" type="text/css">
+	<link href="../pagefile/default.css" rel="stylesheet" type="text/css">
+   <META content="MSHTML 6.00.2900.3086" name=GENERATOR>
+  <Script type="text/javascript" src="../Scripts/numberOnly.js"></script>
+  <Script type="text/javascript" src="../Scripts/dateCheck.js"></script>
+  <Script type="text/javascript" src="../Scripts/validMobile.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="../pagefile/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+<script type ="text/javascript" src="../pagefile/calendar.js"></script>
+<script type ="text/javascript" src="../pagefile/calendar-setup.js"></script>
+<script type ="text/javascript" src="../pagefile/lang/calendar-en.js"></script>
+</head>
+					
+<body >
+<DIV id=top> <font color="#00cc99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Helvetica" size="6">  <em>m</em>usic tunes</font></font><br>
+<table height="30" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+   <TR><td ><font color="#006600" size="1">
+                   &nbsp;&nbsp;<b>Administration</a></b>
+                 </font></td></tr>
+</table>  
+<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>  <td></td>  </tr>
+  <tr bgcolor="#ffffff">  <td></td>  </tr>
+  <tr>
+    <td>
+      <table bgcolor="#ffffff" width="784" border="1" BORDERCOLOR="GREEN" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="80" align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+         <tr>
+            <td><img src="../images/spacer.gif" width="5" height="5"></td>
+          </tr>
+      <tr>
+        <td width="175" align="left" valign="top"><table width="175"  border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><table width="100%"  border="0" cellpadding="0" cellspacing="0" >
+              <tr>
+                <td width="6%">&nbsp;</td>
+                <td width="49%"><strong>User menu </strong></td>
+              </tr>
+           </table></td>
+         </tr>
+        <%
+    if(sessionHistory.isAllowed(100) || sessionHistory.isAllowed(101) ||sessionHistory.isAllowed(110) ||  sessionHistory.isAllowed(120) || sessionHistory.isAllowed(130) || sessionHistory.isAllowed(140) || sessionHistory.isAllowed(150) ||  sessionHistory.isAllowed(160) ||  sessionHistory.isAllowed(170) ||  sessionHistory.isAllowed(180) || sessionHistory.isAllowed(190) || sessionHistory.isAllowed(290) || sessionHistory.isAllowed(300) || sessionHistory.isAllowed(310) || sessionHistory.isAllowed(157) || sessionHistory.isAllowed(2066) || sessionHistory.isAllowed(2067) || sessionHistory.isAllowed(2068) ||  sessionHistory.isAllowed(2069) || sessionHistory.isAllowed(2070) || sessionHistory.isAllowed(2071) || sessionHistory.isAllowed(2072) ||  sessionHistory.isAllowed(2073) ||  sessionHistory.isAllowed(2074) ||  sessionHistory.isAllowed(2075) || sessionHistory.isAllowed(2076) || sessionHistory.isAllowed(2077) || sessionHistory.isAllowed(2078) || sessionHistory.isAllowed(2079) || sessionHistory.isAllowed(2080) || sessionHistory.isAllowed(2081) || sessionHistory.isAllowed(2082) || sessionHistory.isAllowed(2083) || sessionHistory.isAllowed(2084) || sessionHistory.isAllowed(2085))
+				{
+				%>
+				<tr>
+								<td align="center" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="2">
+																<tr>
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<tr align="left">
+																				<td width="5%"><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td width="90%"><a href="../home.jsp"><%=TSSJavaUtil.instance().getKeyValue("webhome")%></a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+															<%	
+																if(  sessionHistory.isAllowed(2066) )
+																{
+																%>
+													<!--			<tr align="left">
+																				<td width="5%"><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td width="90%"><a href="../WebAdminLogs/sysmonitorlog.jsp"><%=TSSJavaUtil.instance().getKeyValue("sysmonitorlog")%></a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>-->
+																<%
+																}
+																if(  sessionHistory.isAllowed(2067) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../SystemConfiguration/systemConfiglogs.jsp?startDate=1&endDate=1&pageno=0"><%=TSSJavaUtil.instance().getKeyValue("sysconfiglog")%></a> </td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2068) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&pageno=0&type=0&keywords=smscconfigurationlogs"><%=TSSJavaUtil.instance().getKeyValue("smscconfiglog")%></a> </td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+
+																<%
+																}
+																if(  sessionHistory.isAllowed(2069))
+																{
+																%>
+																
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=hlrconfiglog&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("hlrconfiglog")%></a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																
+																<%
+																}
+																if(  sessionHistory.isAllowed(2070))
+																{
+																%>
+																
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=imsiconfiglog&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("imsiconfiglog")%></a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																
+																<%
+																}
+/*
+																if(  sessionHistory.isAllowed(2071) )
+																{*/
+																%>
+
+														<!--		<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../WebAdminLogs/logsfile.jsp?startDate=01-01-2008&endDate=1&order=ASC&searchId=1&keywords=homesubscriberlog&pid=1"><%=TSSJavaUtil.instance().getKeyValue("homesublog")%></a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>-->
+
+																<%
+															//	}
+																if(  sessionHistory.isAllowed(2072) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=usermanagementlog&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("usermgmtlog")%></a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2073) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=corporatemanagementlog&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("corpacclog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+
+																<%
+																}
+																if(  sessionHistory.isAllowed(2074) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=occasionmanagementlog&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("occmgmtlog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+
+																<%
+																}
+																if(  sessionHistory.isAllowed(2075) )
+																{
+																%>
+
+																  <tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=keywordparserlog&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("keywordlog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+															//	if(  sessionHistory.isAllowed(2076) )
+															//	{
+																%>
+
+															<!--	<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><a href="../WebAdminLogs/logsfile.jsp?startDate=01-01-2008&endDate=1&order=ASC&searchId=1&keywords=smstemplatelog&pid=1"><%=TSSJavaUtil.instance().getKeyValue("smstemplatelog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>-->
+																<%
+															/*	}
+																if(  sessionHistory.isAllowed(2077) )
+																{*/
+																%>
+
+																<!--<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><a href="../WebAdminLogs/logsfile.jsp?startDate=01-01-2008&endDate=1&order=ASC&searchId=1&keywords=rolemanagementlog&pid=1"><%=TSSJavaUtil.instance().getKeyValue("roletypelog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>-->
+																<%
+															/*	}
+																if(  sessionHistory.isAllowed(2078) )
+																{*/
+																%>
+
+																		<!--  <tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><a href="../WebAdminLogs/logsfile.jsp?startDate=01-01-2008&endDate=1&order=ASC&searchId=1&keywords=activatelog&pid=1"><%=TSSJavaUtil.instance().getKeyValue("activatelog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>-->
+																<%
+															/*	}
+																if(  sessionHistory.isAllowed(2079) )
+																{*/
+																%>
+																
+														<!--		<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><a href="../WebAdminLogs/logsfile.jsp?startDate=01-01-2008&endDate=1&order=ASC&searchId=1&keywords=deactivatelog&pid=1"><%=TSSJavaUtil.instance().getKeyValue("deactivatelog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>-->
+																<%
+															/*	}
+																if(  sessionHistory.isAllowed(2080) )
+																{*/
+																%>
+
+													<!--			<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><a href="../WebAdminLogs/logsfile.jsp?startDate=01-01-2008&endDate=1&order=ASC&searchId=1&keywords=campaignmanagementlog&pid=1"><%=TSSJavaUtil.instance().getKeyValue("ivroutdiallog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>-->
+																<%
+															//	}
+																if(  sessionHistory.isAllowed(2081) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=chargingruleslog&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("chargingrulelog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2082) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=rbtrateplanlogs&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("rateplanlog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+														if(  sessionHistory.isAllowed(2083) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=viralsmslog&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("vsrmanaglog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+
+
+																if(  sessionHistory.isAllowed(2084) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><a href="../WebAdminLogs/logsfile.jsp?startDate=1&endDate=1&keywords=promotionmanagementlog&pageno=0&type=0"><%=TSSJavaUtil.instance().getKeyValue("rbtpromologs")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																//if(  sessionHistory.isAllowed(2085) )
+															//	{
+																%>
+
+															<!--	<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><a href="../WebAdminLogs/logsfile.jsp?startDate=01-01-2008&endDate=1&order=ASC&searchId=1&keywords=rbtreqlog&pid=1"><%=TSSJavaUtil.instance().getKeyValue("rbtreqlog")%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>-->
+																<%
+															//	}
+																if(  sessionHistory.isAllowed(2030) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td><strong><%=TSSJavaUtil.instance().getKeyValue("contentrep")%></strong></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/bline.jpg" width="158" height="2"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2031) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/rbtreport.jsp?reportId=0" ><%=TSSJavaUtil.instance().getKeyValue("detailrbt")%></a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2032) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/home.jsp?reportId=1&a=1" ><%=TSSJavaUtil.instance().getKeyValue("rbtsubs")%></a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2033) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/home.jsp?reportId=5&a=0" ><%=TSSJavaUtil.instance().getKeyValue("toprbtlist")%></a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2034) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/home.jsp?reportId=2&a=1" ><%=TSSJavaUtil.instance().getKeyValue("rbtsublist")%></a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2035) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/vendorrbts.jsp?id=1" >RBT Upload Report</a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2036) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/vendorrbts.jsp?id=2" >RBT Used Report</a></td>
+																</tr>
+
+																<%
+																}
+														if(sessionHistory.isAllowed(740))
+															{
+												%>
+
+																<tr align="left">
+																<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																<TD ><A HREF="../ChangePassword/change_password.jsp" class="logout"><%=TSSJavaUtil.instance().getKeyValue("changpasswd")%></A></TD>
+																</tr>
+																<tr align="left">
+																<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+								}
+				%>
+								<tr align="left">
+								<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+								<td><strong><a href="../logout.jsp" class="logout"><%=TSSJavaUtil.instance().getKeyValue("logout")%></a></strong></td>
+								</tr>
+								<tr>
+								<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+								</tr>
+								</table></td>
+								</tr>
+								<%
+}
+		%>
+
+              <tr>
+		   <td height="20" colspan="2" bgcolor="#FFFFFF" align="left" >Powered by <font color="#FF6c00">Telemune</font></td>
+              </tr>
+		<tR><td bgcolor="#FFFFFF" height="10"></td></tr>
+		<tr><td bgcolor="#FFFFFF">	<img src="../images/telemune.jpg" height="70" width="60"></td>	</tr> 
+		<tr><td bgcolor="#FFFFFF" class="foot">Copyright &copy; 2007 Telemune</td></tr> 
+
+        </table></td>
+          </tr>
+        </table></td>
+				
+ 				<!--PagE pArT, tO eNtEr dAta fRom oUr sIDe. sTARt hERe --> 
+
+	      <td><img src="../images/spacer.gif" width="4" height="4"></td>
+        <td width="100%" align="left" valign="top">
+				
+				<table width="100%"  border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td><img src="../images/spacer.gif" width="4" height="4"></td>
+          </tr>
+          <tr class="bodytext">
+            <td><table width="80%" border="0" align="center" cellpadding="2" cellspacing="1"> 
+		<tr> <td>   
+					
+									<!--ADD Contents Here  -->
+

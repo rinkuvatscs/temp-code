@@ -1,0 +1,126 @@
+ <Context displayName="Welcome to TELEMUNE CRBT" docBase="webadmin" path="/webadmin" reloadable="true">
+ <Resource name="jdbc/crbtadminA" auth="Container"
+ type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver"
+      url="jdbc:oracle:thin:@10.168.1.31:1521:mastera" username="crbtback" password="crbtback" maxActive="2" maxIdle="1" maxWait="-1" validationQuery="select * from dual" testOnBorrow="true" />
+
+ <Resource name="jdbc/crbtadminB" auth="Container"
+ type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver"
+    url="jdbc:oracle:thin:@10.168.1.31:1521:mastera" username="crbtback" password="crbtback" maxActive="2" maxIdle="1" maxWait="-1" validationQuery="select * from dual" testOnBorrow="true" />
+
+<Resource name="jdbc/crbtadminR" auth="Container"
+type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver"
+  url="jdbc:oracle:thin:@10.168.1.31:1521:mastera" username="crbtback" password="crbtback" maxActive="2" maxIdle="1" maxWait="-1" validationQuery="select * from dual" testOnBorrow="true" />
+
+</Context>
+
+
+
+
+
+
+
+
+<!--<Context displayName="Welcome to TELEMUNE WebAdmin" docBase="webadmin" path="/webadmin" reloadable="true">
+  <Resource auth="Container" name="jdbc/crbtadminA" type="javax.sql.DataSource"/>
+  <ResourceParams name="jdbc/crbtadminA">
+    <parameter>
+      <name>url</name>
+      <value>jdbc:oracle:thin:@192.168.57.200:1521:vmsdb</value>
+    </parameter>
+    <parameter>
+      <name>validationQuery</name>
+      <value>select * from dual</value>
+    </parameter>
+    <parameter>
+      <name>maxIdle</name>
+      <value>1</value>
+    </parameter>
+    <parameter>
+      <name>maxActive</name>
+      <value>2</value>
+    </parameter>
+    <parameter>
+      <name>driverClassName</name>
+      <value>oracle.jdbc.driver.OracleDriver</value>
+    </parameter>
+    <parameter>
+      <name>maxWait</name>
+      <value>-1</value>
+    </parameter>
+    <parameter>
+      <name>removeAbandoned</name>
+      <value>true</value>
+    </parameter>
+    <parameter>
+      <name>factory</name>
+      <value>org.apache.commons.dbcp.BasicDataSourceFactory</value>
+    </parameter>
+    <parameter>
+      <name>username</name>
+      <value>crbt</value>
+    </parameter>
+    <parameter>
+      <name>logAbandoned</name>
+      <value>true</value>
+    </parameter>
+    <parameter>
+      <name>removeAbandonedTimeout</name>
+      <value>60</value>
+    </parameter>
+    <parameter>
+      <name>password</name>
+      <value>crbt</value>
+    </parameter>
+  </ResourceParams>
+  <Resource auth="Container" name="jdbc/crbtadminB" type="javax.sql.DataSource"/>
+  <ResourceParams name="jdbc/crbtadminB">
+    <parameter>
+      <name>url</name>
+      <value>jdbc:oracle:thin:@192.168.57.200::1521:test</value>
+    </parameter>
+    <parameter>
+      <name>validationQuery</name>
+      <value>select * from dual</value>
+    </parameter>
+    <parameter>
+      <name>maxIdle</name>
+      <value>1</value>
+    </parameter>
+    <parameter>
+      <name>maxActive</name>
+      <value>2</value>
+    </parameter>
+    <parameter>
+      <name>driverClassName</name>
+      <value>oracle.jdbc.driver.OracleDriver</value>
+    </parameter>
+    <parameter>
+      <name>maxWait</name>
+      <value>-1</value>
+    </parameter>
+    <parameter>
+      <name>removeAbandoned</name>
+      <value>true</value>
+    </parameter>
+    <parameter>
+      <name>factory</name>
+      <value>org.apache.commons.dbcp.BasicDataSourceFactory</value>
+    </parameter>
+    <parameter>
+      <name>username</name>
+      <value>crbt</value>
+    </parameter>
+    <parameter>
+      <name>logAbandoned</name>
+      <value>true</value>
+    </parameter>
+    <parameter>
+      <name>removeAbandonedTimeout</name>
+      <value>60</value>
+    </parameter>
+    <parameter>
+      <name>password</name>
+      <value>crbt</value>
+    </parameter>
+  </ResourceParams>
+  </Context>-->

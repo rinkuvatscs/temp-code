@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="dist" name="MyProject">
+				<property file="build.ant.properties"/>
+				<description>
+								Telemune WebAdmin build file for ant
+				</description>
+				<!-- set global properties for this build -->
+				<property location="src/javafile" name="src"/>
+				<property location="build" name="build"/>
+				<property location="/home/tomcat/apache-tomcat-7.0.30/webapps/" name="dist"/>
+
+				<target name="init">
+								<!-- Create the time stamp -->
+								<tstamp/>
+								<!-- Create the build directory structure used by compile -->
+								<mkdir dir="${build}"/>
+				</target>
+
+				<target depends="init" description="compile the source " name="compile">
+								<javac classpath="lib/jfreechart-0.9.21.jar:lib/log4j-1.2.8.jar:lib/jcommon-0.9.6.jar:lib/jcommon-0.9.6-junit.jar:lib/servlet-api.jar:lib/tomcat-util.jar:/lib/commons-fileupload-1.2.1.jar:/lib/commons-io-1.1.jar:/lib/commons-fileupload-1.2.1-javadoc.jar:/lib/commons-fileupload-1.2.1-sources.jar:/lib/commons-io-1.1-javadoc.jar:/lib/commons-io-1.1-sources.jar" destdir="${build}" srcdir="${src}"/>
+
+				</target>
+
+				<target depends="compile" description="generate the distribution" name="dist">
+								<!-- Create the distribution directory -->
+								<war destfile="${dist}/webadmin.war" update="true" webxml="src/metadata/webadmin.xml">
+												<fileset dir="src/jsp"/>
+												<fileset dir="meta"/>
+
+                                                                                                    <lib dir="lib"/>
+												<classes dir="build"/>
+												<classes file="config/webadmin_config.xml"/>
+												<zipfileset dir="src/jsp/images" prefix="images"/>
+								</war>
+				</target>
+
+				<target description="clean up" name="clean">
+								<!-- Delete the ${build} and ${dist} directory trees -->
+								<delete dir="${build}"/>
+								<delete file="${dist}/webadmin.war"/>
+				</target>
+</project>

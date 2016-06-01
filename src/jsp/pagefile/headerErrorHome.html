@@ -1,0 +1,122 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<%@ page language = "java" %>
+<head>
+	<script type="text/javascript">
+			function validate()
+				{
+							if(document.forms.form1.msisdn.value =="")
+								{
+										alert("You must enter Login Name")
+										return false
+								}
+							if(document.forms.form1.password.value =="")
+								{
+										alert("You must enter Password")
+										return false
+								}
+							return true
+				}
+	</script>
+<TITLE>CRBT Admin</TITLE>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link href="pagefile/frstyles.css" rel="stylesheet" type="text/css">
+	<link href="pagefile/default.css" rel="stylesheet" type="text/css">
+<META content="MSHTML 6.00.2900.3086" name=GENERATOR>
+
+
+
+</head>
+					
+<body >
+<DIV id=top>
+  <tr ><td ><img src="images/az.png"style="float: right;"  width="179" height="52" >
+<!--<A href="http://www.cwbmobile.com/"><IMG class=headerlogo alt=bmobile src="../images/logo-bmobile1.gif" border=0></A>--> <font color="#00cc99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Helvetica" size="6">bakcell tunes</font></font><br><!--<div align="right"><font face="Verdana" size="1" color="#ff33cc" >Welcome your caller with a song/music you like</font></div>-->
+
+<table height="30" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <TR><td ><font color="#006600" size="1"><b>&nbsp;&nbsp;Administration</b></font></td></tr>
+</table>  
+<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>  <td></td>  </tr>
+  <tr bgcolor="#ffffff">  <td></td>  </tr>
+  <tr>
+    <td>
+      <table bgcolor="#ffffff" width="784" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="80" align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+         <tr>
+            <td><img src="images/spacer.gif" width="5" height="5"></td>
+          </tr>
+      <tr>
+        <td width="175" align="left" valign="top"><table width="175"  border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><table width="100%"  border="0" cellpadding="0" cellspacing="0" >
+              <tr>
+                <td width="6%">&nbsp;</td>
+ 
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <form name="form1" method="post" action="login.jsp" onSubmit="return validate()" id="form1">
+                <tr align="left">
+                  <td width="6%"><img src="images/spacer.gif" width="12" height="3"></td>
+                  <td width="55%" class="logintext">User #</td>
+                  <td width="39%">&nbsp;</td>
+                </tr>
+                <tr align="left">
+                  <td>&nbsp;</td>
+                  <td><input name="msisdn" type="text" size="19" maxlength="15">
+                  </td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr align="left">
+                  <td>&nbsp;</td>
+                  <td class="logintext">Password</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr align="left">
+                  <td>&nbsp;</td>
+                  <td><input name="password" type="password" size="19" maxlength="15"></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr align="left">
+                  <td><img src="images/spacer.gif" width="1" height="30"></td>
+		              <td height="20" colspan="2" valign="bottom"><input type="image" src="images/logbtn.jpg" width="35" height="20" name="Submit" value="Submit"></td>
+                    </tr>
+                    <tr align="left">
+                      <td height="8" colspan="3"><img src="images/spacer.gif" width="5" height="5"></td>
+                    </tr>
+              </form>
+                </table></td>
+              </tr>
+<!--
+              <tr>
+		   <td height="20" colspan="2" bgcolor="#FFFFFF" align="left" >Powered by <font color="#FF6c00">Telemune</font></td>
+              </tr>
+		<tR><td bgcolor="#FFFFFF" height="10"></td></tr>
+		<tr><td bgcolor="#FFFFFF">	<img src="images/telemune.jpg" height="70" width="60"></td>	</tr> 
+		<tr><td bgcolor="#FFFFFF" class="foot">Copyright &copy; 2007 Telemune</td></tr> 
+-->
+            </table></td>
+          </tr>
+        </table></td>
+				
+ 				<!--PagE pArT, tO eNtEr dAta fRom oUr sIDe. sTARt hERe --> 
+
+	      <td><img src="images/spacer.gif" width="4" height="4"></td>
+        <td width="100%" align="left" valign="top">
+				
+				<table width="100%"  border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td><img src="images/spacer.gif" width="4" height="4"></td>
+          </tr>
+          <tr class="bodytext">
+            <td><table width="80%" border="0" align="center" cellpadding="2" cellspacing="1"> 
+		<tr> <td>   </td></tr>
+					
+									<!--ADD Contents Here  -->
+

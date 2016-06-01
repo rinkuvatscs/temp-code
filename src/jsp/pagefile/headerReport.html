@@ -1,0 +1,783 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<%@ page language = "java" %>
+<head>
+<TITLE>CRBT Admin</TITLE>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<link href="../pagefile/frstyles.css" rel="stylesheet" type="text/css">
+	<link href="../pagefile/default.css" rel="stylesheet" type="text/css">
+   <META content="MSHTML 6.00.2900.3086" name=GENERATOR>
+  <Script type="text/javascript" src="../Scripts/numberOnly.js"></script>
+  <Script type="text/javascript" src="../Scripts/dateCheck.js"></script>
+  <Script type="text/javascript" src="../Scripts/validMobile.js"></script>
+  <Script type="text/javascript" src="../Scripts/dateValidation.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="../pagefile/calendar-win2k-cold-1.css" title="win2k-cold-1" />
+<script type ="text/javascript" src="../pagefile/calendar.js"></script>
+<script type ="text/javascript" src="../pagefile/calendar-setup.js"></script>
+<script type ="text/javascript" src="../pagefile/lang/calendar-en.js"></script>
+
+  <script language ="javascript" >
+
+function back()
+{
+history.go(-1);
+}
+function validate()
+        {
+                var st;
+                var ed;
+                var dt;
+
+
+                if (document.form1.reportType[1].checked == true)
+                {
+                        st = document.form1.start.value;
+                        ed = document.form1.end.value;
+
+                        stdate = st.substring(0,2);
+                        stmonth = st.substring(3,5);
+                        styear = st.substring(6,10);
+
+                        eddate = ed.substring(0,2);
+                        edmonth = ed.substring(3,5);
+                        edyear = ed.substring(6,10);
+
+                        dt = new Date();
+                        nowday = dt.getDate();
+                        nowmonth = dt.getMonth();
+                        nowyear = dt.getYear();
+                        nowmonth = nowmonth+1;
+                        nowyear += (nowyear<1900)? 1900:0
+
+
+                        var sday = nowday.toString();
+                        var smonth = nowmonth.toString();
+                        var syear = nowyear.toString();
+
+                        if(sday <= 9)
+                        {
+                                sday= '0'+sday;
+                        }
+                        if(smonth <= 9)
+                        {
+                                smonth = '0'+smonth;
+                        }
+                var Date_today = sday+'-'+smonth+'-'+syear;
+                if ((ed == "") || (st == ""))
+                        {
+                                                        alert("<%=TSSJavaUtil.instance().getKeyValue("alpldate",defLangId)%>");
+                                document.form1.start.focus();
+                                return false;
+
+                        }
+   if (st == "")
+                        {
+                                                        alert("<%=TSSJavaUtil.instance().getKeyValue("alstdate",defLangId)%>");
+                                document.form1.start.focus();
+                                return false;
+
+                        }
+
+                if (ed == "")
+                        {
+                                                        alert("<%=TSSJavaUtil.instance().getKeyValue("alenddate",defLangId)%>");
+                                document.form1.end.focus();
+                                return false;
+
+                        }
+
+                if ( parseInt(styear+stmonth+stdate) >= parseInt(edyear+edmonth+eddate) )
+                        {
+                                                        alert("<%=TSSJavaUtil.instance().getKeyValue("alstless",defLangId)%>");
+                                document.form1.start.focus();
+                                return false;
+
+                        }
+
+                if ( parseInt(edyear+edmonth+eddate) > parseInt(syear+smonth+sday) )
+                        {
+                                                        alert("<%=TSSJavaUtil.instance().getKeyValue("alendcur",defLangId)%>"+Date_today);
+                                end="";
+                                document.form1.end.focus();
+                                return false;
+                        }
+                }
+ }
+function validatemonth()
+{
+                var dt;
+                var st;
+                var ed;
+                if (document.form1.reportType[1].checked == true)
+                {
+                  var theindex = document.getElementById("aggre");
+
+                        if (theindex.selectedIndex == 0)
+                        {
+                                                        st = document.getElementById("f_date_c1").value;
+                                                        ed = document.getElementById("f_date_c2").value;
+
+                                                        stmonth = st.substring(0,2);
+                                                        styear = st.substring(3,7);
+
+                                                        edmonth = ed.substring(0,2);
+                                                        edyear = ed.substring(3,7);
+
+                                                        dt = new Date();
+                                                        nowday = dt.getDate();
+                                                        nowmonth = dt.getMonth();
+                                                        nowyear = dt.getYear();
+                                                        nowmonth = nowmonth+1;
+                                                        nowyear += (nowyear<1900)? 1900:0
+
+
+                                                        var smonth = nowmonth.toString();
+                                                        var syear = nowyear.toString();
+
+                                                        if(smonth <= 9)
+                                                        {
+                                                                                        smonth = '0'+smonth;
+                                                        }
+                                                        var Date_today = smonth+'-'+syear;
+
+                                                        if (st == "")
+                                                        {
+                                                                                        //alert("Enter start month");
+                           alert("<%=TSSJavaUtil.instance().getKeyValue("start_month",defLangId)%>");
+                                                                                        document.form1.start.focus();
+                                                                                        return false;
+
+                                                        }
+
+                                                        if (ed == "")
+                                                        {
+                                                                                        //alert("Enter end month");
+                alert("<%=TSSJavaUtil.instance().getKeyValue("end_month",defLangId)%>");
+                                                                                        document.form1.end.focus();
+                                                                                        return false;
+
+                                                        }
+
+  if ( parseInt(styear+stmonth) > parseInt(edyear+edmonth) )
+                                                        {
+                                                        //alert("Start month must be less than or equal to end month");
+                alert("<%=TSSJavaUtil.instance().getKeyValue("Smonth",defLangId)%>");
+                                                                                        document.form1.start.focus();
+                                                                                        return false;
+
+                                                        }
+
+                                                        if ( parseInt(edyear+edmonth) > parseInt(syear+smonth) )
+                                                        {
+                                        //alert("End month cannot be greater than current month= "+Date_today);
+     alert("<%=TSSJavaUtil.instance().getKeyValue("Endmonth",defLangId)%>"+Date_today);
+                                                                                        end="";
+                                                                                        document.form1.end.focus();
+                                                                                        return false;
+                                                        }
+                                                        if ( parseInt(edyear+edmonth) == parseInt(syear+smonth) )
+                                                        {
+                                        //alert("End month cannot be equal to current month= "+Date_today);
+  alert("<%=TSSJavaUtil.instance().getKeyValue("Ecurrent_month",defLangId)%>"+Date_today);
+                                                                                        end="";
+                                                                                        document.form1.end.focus();
+                                                                                        return false;
+                                                        }
+
+                                                        if ( parseInt(edyear) != parseInt(styear) )
+                                                        {
+                                //alert("Year must be same for monthly report");
+   alert("<%=TSSJavaUtil.instance().getKeyValue("Yearreport",defLangId)%>");
+                                                                                        end="";
+                                                                                        document.form1.end.focus();
+                                                                                        return false;
+                                                        }
+                        }
+                else if(theindex.selectedIndex==1)
+                {
+                                                        st = document.getElementById("f_date_c1").value;
+                                                        ed = document.getElementById("f_date_c2").value;
+
+                                                styear = st.substring(3,7);
+                                                edyear = ed.substring(3,7);
+
+                                                dt = new Date();
+                                                nowday = dt.getDate();
+                                                nowmonth = dt.getMonth();
+                                                nowyear = dt.getYear();
+                                                nowmonth = nowmonth+1;
+                                                nowyear += (nowyear<1900)? 1900:0
+
+
+                                                                                var syear = nowyear.toString();
+
+                                                var Date_today = syear;
+                                                if ((ed == "") && (st == ""))
+    {
+                    alert("<%=TSSJavaUtil.instance().getKeyValue("Etartyr",defLangId)%>");
+                                                                                document.form1.start.focus();
+                                                                                return false;
+
+                                                }
+
+                                                if (st == "")
+                                                {
+              alert("<%=TSSJavaUtil.instance().getKeyValue("Enter_start_year",defLangId)%>");
+                                                                                document.form1.start.focus();
+                                                                                return false;
+
+                                                }
+
+                                                if (ed == "")
+                                                {
+             alert("<%=TSSJavaUtil.instance().getKeyValue("Enter_end_year",defLangId)%>");
+                                                                                document.form1.end.focus();
+                                                                                return false;
+
+                                                }
+
+                                                if ( parseInt(styear) > parseInt(edyear) )
+                                                {
+     alert("<%=TSSJavaUtil.instance().getKeyValue("Starteyr",defLangId)%>");
+                                                                                document.form1.start.focus();
+                                                                                return false;
+
+                                                }
+
+                                                if ( parseInt(edyear) > parseInt(syear) )
+                                                {
+    alert("<%=TSSJavaUtil.instance().getKeyValue("Ecurrentyr",defLangId)%>"+Date_today);
+                                                                                end="";
+                                                                                document.form1.end.focus();
+                                                                                return false;
+                                                }
+                }
+
+                }
+}
+function disablefield()
+        {
+                document.form1.start.disabled=true;
+                document.form1.end.disabled=true;
+                document.form1.aggre.disabled=true;
+                if(document.getElementById)
+                {
+                                                        document.getElementById("f_trigger_c1").style.visibility="hidden";
+                                                        document.getElementById("f_trigger_c2").style.visibility="hidden";
+                }
+                else
+                {
+                                                        document.f_trigger_c1.visibility="hidden";
+                                                        document.f_trigger_c2.visibility="hidden";
+                }
+
+        }function enablefield()
+        {
+                document.form1.start.disabled=false;
+                document.form1.end.disabled=false;
+                document.form1.aggre.disabled=false;
+                if(document.getElementById)
+                {
+                                                        document.getElementById("f_trigger_c1").style.visibility="visible";
+                                                        document.getElementById("f_trigger_c2").style.visibility="visible";
+                }
+                else
+                {
+                                                        document.f_trigger_c1.visibility="visible";
+                                                        document.f_trigger_c2.visibility="visible";
+                }
+//document.form1.c1.disabled=false;
+//document.form1.c2.disabled=false;
+}
+</script>
+
+</head>
+					
+<body >
+<DIV id=top><!--<A href="http://www.cwbmobile.com/"><IMG class=headerlogo alt=bmobile src="../images/logo-bmobile1.gif" border=0></A>-->
+<tr ><td ><img src="../images/az.png"style="float: right;"  width="179" height="52" >
+ <font color="#00cc99">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Helvetica" size="6">  <em>b</em>akcell tunes</font></font><br><!--<div align="right"><font face="Verdana" size="1" color="#ff33cc" >Welcome your caller with a song/music you like</font></div>-->
+
+<table height="30" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+   <TR><td ><font color="#006600" size="1">
+                   &nbsp;&nbsp;<b><!--<a href="http://172.20.76.7:8081/webadmin" target="_">-->Administration</a></b>
+       <!--
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a href="http://172.26.2.86:8081/custcare" target="_">Customer Care</a></b>
+                   &nbsp;&nbsp;<b><a href="http://172.26.2.86:8081/reports" target="_">Reports</a></b>
+                   &nbsp;&nbsp;<b><a href="http://172.26.2.86:8081/crbtcontent" target="_">Content Management</a></b>
+-->
+           </font></td></tr>
+</table>  
+<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>  <td></td>  </tr>
+  <tr bgcolor="#ffffff">  <td></td>  </tr>
+  <tr>
+    <td>
+      <table bgcolor="#ffffff" width="784" border="1" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="80" align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+         <tr>
+            <td><img src="../images/spacer.gif" width="5" height="5"></td>
+          </tr>
+      <tr>
+        <td width="175" align="left" valign="top"><table width="175"  border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><table width="100%"  border="0" cellpadding="0" cellspacing="0" >
+              <tr>
+                <td width="6%">&nbsp;</td>
+                <td width="49%"><strong><%=TSSJavaUtil.instance().getKeyValue("User_menu",defLangId)%> </strong></td>
+              </tr>
+           </table></td>
+         </tr>
+        <%
+    //if(sessionHistory.isAllowed(100) || sessionHistory.isAllowed(101) ||sessionHistory.isAllowed(110) ||  sessionHistory.isAllowed(120) || sessionHistory.isAllowed(130) || sessionHistory.isAllowed(140) || sessionHistory.isAllowed(150) ||  sessionHistory.isAllowed(160) ||  sessionHistory.isAllowed(170) ||  sessionHistory.isAllowed(180) || sessionHistory.isAllowed(190) || sessionHistory.isAllowed(290) || sessionHistory.isAllowed(300) || sessionHistory.isAllowed(310) || sessionHistory.isAllowed(157))
+				{
+				%>
+				<tr>
+								<td align="center" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="2">
+																<tr>
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																if(  sessionHistory.isAllowed(100) )
+																{
+																%>
+																<!--
+																																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<tr align="left">
+																				<td width="5%"><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td width="90%"><a href="../Invoice/invoice.jsp"><%=TSSJavaUtil.instance().getKeyValue("crbtinvoice")%></a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																-->
+<!--
+<tr align="left">
+				<td width="5%"><img src="../images/catbl.jpg" width="10" height="9"></td>
+				<td width="90%"><a href="../getSubStat.jsp"><%=TSSJavaUtil.instance().getKeyValue("SubLic",defLangId)%></a></td>
+</tr>-->
+<tr align="left">
+				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+</tr>
+
+																<%
+																}
+																if(  sessionHistory.isAllowed(101) )
+																{
+																%>
+<!--																<tr align="left">
+																				<td width="5%"><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td width="90%"><a href="../RBT/rbt.jsp">CRBT Default RBT</a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																-->												
+																<%
+																}
+
+																if(  sessionHistory.isAllowed(130) )
+																{
+																%>
+      <!--
+																<tr align="left">
+																				<td width="5%"><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td width="90%"><a href="../SystemMonitoring/han.jsp"><%=TSSJavaUtil.instance().getKeyValue("sysmonitoring",defLangId)%></a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>  -->
+																<%
+																}
+																if(  sessionHistory.isAllowed(110) )
+{
+%>
+<!--
+<tr align="left">
+				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+				<td ><a href="../SystemConfiguration/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("sysconfig")%></a> </td>
+</tr>
+<tr align="left">
+				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+</tr>
+-->
+
+<%
+}
+																if(  sessionHistory.isAllowed(120) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../SMSCConfiguration/home.jsp">SMSC Configuration</a> </td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+
+																<%
+																}
+																if(  sessionHistory.isAllowed(280))
+																{
+																%>
+																
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../HLRConfig/home.jsp">HLR Configuration</a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																
+																<%
+																}
+																if(  sessionHistory.isAllowed(310))
+																{
+																%>
+																
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../IMSIConfig/home.jsp">IMSI Configuration</a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																
+																<%
+																}
+
+																if(  sessionHistory.isAllowed(140) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../HomeSubscriberManagement/home.jsp">Home Subscriber Management</a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+
+																<%
+																}
+																if(  sessionHistory.isAllowed(150) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td ><a href="../UserManagement/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("usermgmt",defLangId)%></a></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(157) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><A HREF="../CorporateManagement/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("corpacc",defLangId)%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+
+																<%
+																}
+																if(  sessionHistory.isAllowed(1021) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><A HREF="../OccasionManagement/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("occmgmt",defLangId)%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+
+																<%
+																}
+																if(  sessionHistory.isAllowed(290) )
+																{
+																%>
+
+																  <tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><A HREF="../KeywordParser/home.jsp">Keyword Parser Management</A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(300) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><A HREF="../SMSTemplate/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("smstemplate",defLangId)%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(190) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><A HREF="../RoleManagement/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("roletype",defLangId)%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(170) )
+																{
+																%>
+
+																		  <tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><A HREF="../Activate/activate.jsp">Activate All Subscribers</A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(170) )
+																{
+																%>
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD ><A HREF="../Activate/deactivate.jsp">Deactivate All Subscribers</A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2000) )
+																{
+																%>
+                                                                       <!--
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><A HREF="../CampaignManagement/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("ivroutdial",defLangId)%></A></TD>
+																</tr> -->
+																<%
+																}
+																if(  sessionHistory.isAllowed(2050) )
+																{
+																%>
+<!--
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><A HREF="../ChargingRules/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("chargingrule",defLangId)%></A></TD>
+																</tr> -->
+																<%
+																}
+																if(  sessionHistory.isAllowed(2060) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><A HREF="../ServiceClasses/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("serviceclassrule",defLangId)%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+<%
+								}
+if(  sessionHistory.isAllowed(2070) )
+																{
+																%>
+
+														<!--		<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><A HREF="../PrePostClasses/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("prepostrule",defLangId)%></A></TD>
+																</tr> -->
+																<%
+																}
+	if(  sessionHistory.isAllowed(2060) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="images/catbl.jpg" width="10" height="9"></td>
+																				<TD><A HREF="ViralSMSRangeManagement/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("vsrmanag",defLangId)%></A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2010) )
+																{
+																%>
+                                                                                               <!--
+					     											<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><A HREF="../PromotionManagement/home.jsp"><%=TSSJavaUtil.instance().getKeyValue("rbtpromo",defLangId)%></A></TD>
+																</tr> -->
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2020) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<TD><A HREF="../RbtRequest/rbtreq.jsp">PRBT Request Stats</A></TD>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2030) )
+																{
+																%>
+
+																<tr align="left">
+																				<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																				<td><strong><%=TSSJavaUtil.instance().getKeyValue("contentrep",defLangId)%></strong></td>
+																</tr>
+																<tr align="left">
+																				<td colspan="2"><img src="../images/bline.jpg" width="158" height="2"></td>
+																</tr>
+																<%
+
+																if(  sessionHistory.isAllowed(2031) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/rbtreport.jsp?reportId=0" ><%=TSSJavaUtil.instance().getKeyValue("detailrbt",defLangId)%></a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2032) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/home.jsp?reportId=1&a=1" ><%=TSSJavaUtil.instance().getKeyValue("rbtsubs",defLangId)%></a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2033) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/home.jsp?reportId=5&a=0" ><%=TSSJavaUtil.instance().getKeyValue("toprbtlist",defLangId)%></a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2034) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/home.jsp?reportId=2&a=1" ><%=TSSJavaUtil.instance().getKeyValue("rbtsublist",defLangId)%></a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2035) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/vendorrbts.jsp?id=1" >RBT Upload Report</a></td>
+																</tr>
+																<%
+																}
+																if(  sessionHistory.isAllowed(2036) )
+																{
+																%>
+
+																<tr align="left">
+																				<td>&nbsp;</td>
+																				<td><a href="../Reports/vendorrbts.jsp?id=2" >RBT Used Report</a></td>
+																</tr>
+
+																<%
+																}
+																}	
+														if(sessionHistory.isAllowed(740))
+								{
+												%>
+
+																<tr align="left">
+																<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+																<TD ><A HREF="../ChangePassword/change_password.jsp" class="logout"><%=TSSJavaUtil.instance().getKeyValue("changpasswd",defLangId)%></A></TD>
+																</tr>
+																<tr align="left">
+																<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+																</tr>
+																<%
+								}
+				%>
+								<tr align="left">
+								<td><img src="../images/catbl.jpg" width="10" height="9"></td>
+								<td><strong><a href="../logout.jsp" class="logout"><%=TSSJavaUtil.instance().getKeyValue("logout",defLangId)%></a></strong></td>
+								</tr>
+								<tr>
+								<td colspan="2"><img src="../images/spacer.gif" width="3" height="3"></td>
+								</tr>
+								</table></td>
+								</tr>
+								<%
+}
+		%>
+
+              <tr>
+		   <td height="20" colspan="2" bgcolor="#FFFFFF" align="left" >Powered by <font color="#FF6c00">Telemune</font></td>
+              </tr>
+		<tR><td bgcolor="#FFFFFF" height="10"></td></tr>
+		<tr><td bgcolor="#FFFFFF">	<img src="../images/telemune.jpg" height="70" width="60"></td>	</tr> 
+		<tr><td bgcolor="#FFFFFF" class="foot">Copyright &copy; 2013 Telemune</td></tr> 
+
+        </table></td>
+          </tr>
+        </table></td>
+				
+ 				<!--PagE pArT, tO eNtEr dAta fRom oUr sIDe. sTARt hERe --> 
+
+	      <td><img src="../images/spacer.gif" width="4" height="4"></td>
+        <td width="100%" align="left" valign="top">
+				
+				<table width="100%"  border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td><img src="../images/spacer.gif" width="4" height="4"></td>
+          </tr>
+          <tr class="bodytext">
+            <td><table width="80%" border="0" align="center" cellpadding="2" cellspacing="1"> 
+		<tr> <td>   </td></tr>
+					
+									<!--ADD Contents Here  -->
+
